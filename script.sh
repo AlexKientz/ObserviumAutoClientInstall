@@ -13,9 +13,9 @@ apt install -y snmpd
 # Configuration de snmpd.conf
 snmpd_conf="/etc/snmp/snmpd.conf"
 
-# On vérifie si le fichier existe et le sauvegarde s'il existe déjà
+# Vider le fichier snmpd.conf s'il existe
 if [[ -f $snmpd_conf ]]; then
-    cp "$snmpd_conf" "$snmpd_conf.bak"
+    > "$snmpd_conf"
 fi
 
 # Ajout des lignes au fichier snmpd.conf
